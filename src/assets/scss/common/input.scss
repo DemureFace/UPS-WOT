@@ -1,0 +1,53 @@
+input,
+.input {
+  background: $light;
+  border: 1px solid $lightGray;
+  width: 100%;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 16px 15px;
+  height: 48px;
+  font: 400 18px/21px $fontRegular;
+  color: $dark;
+  caret-color: $lightGray;
+
+
+  @include transition(ease-out, 0.5s);
+
+  &:focus {
+      background: $light;
+      border: 1px solid $blackDark;
+    }
+    
+    &_error {
+      border: 1px solid $red;
+      color: $red;
+    }
+}
+
+input + span {
+  position: absolute;
+  left: 21px;
+  bottom: -20px;
+
+  &::before {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    left: -21px;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    background: center / cover no-repeat url("@/assets/img/svg/error.svg");
+  }
+}
+
+
+
+label {
+  font: 300 18px/21px $fontLight;
+  color: $dark;
+  margin-bottom: 7px;
+  display: block;
+
+}
